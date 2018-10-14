@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.guillermorosales.smarthome.R
 import com.guillermorosales.smarthome.viewmodel.MainViewModel
+import com.jakewharton.rxbinding2.widget.RxCompoundButton
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         mainActivityViewModel.lightState.observe(this, Observer<Boolean> { state ->
             switchLamp.isChecked = state!!
         })
-        switchLamp.setOnCheckedChangeListener {_, checked -> mainActivityViewModel.setLightState(checked)}
+
+        RxCompoundButton.checkedChanges(switchLamp).subscribe {
+            mainActivityViewModel.setLightState(it)
+        }
     }
 }
