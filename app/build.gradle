@@ -53,6 +53,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    // Koin for Android
+    def koin_version = '1.0.0'
+    implementation "org.koin:koin-android:$koin_version"
+    // Koin for Android Architecture Components
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+
 }
 
 apply plugin: 'com.google.gms.google-services'
