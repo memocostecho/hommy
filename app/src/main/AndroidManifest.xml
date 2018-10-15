@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:name=".SmartHomeApplication">
         <activity android:name=".view.MainActivity">
-            <intent-filter>x
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

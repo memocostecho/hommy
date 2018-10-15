@@ -31,13 +31,6 @@ class MainViewModel(private val database: FirebaseDatabase) : ViewModel(), Lifec
     fun setLightState(checked: Boolean) =
             database.reference.child(LIGHTS).child(ON).setValue(checked)
 
-    companion object {
-        const val LIGHTS = "lights"
-        const val ON = "ON"
-        const val TAG = "TAG"
-    }
-
-
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun onResume() {
         Log.d(TAG, "onResume called")
@@ -48,4 +41,9 @@ class MainViewModel(private val database: FirebaseDatabase) : ViewModel(), Lifec
         Log.d(TAG, "onPause called")
     }
 
+    companion object {
+        const val LIGHTS = "lights"
+        const val ON = "ON"
+        const val TAG = "TAG"
+    }
 }
