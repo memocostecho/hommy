@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bindViewModel()
+        lifecycle.addObserver(mainActivityViewModel)
     }
 
     private fun bindViewModel() {
